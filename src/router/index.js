@@ -28,7 +28,7 @@ const routes = [
         component: () => import('@/views/home/home'),
       },
       {
-        path: '/room',
+        path: '/room_total',
         name: 'room',
         alias: 'roomManagement',
         component: () => import('@/views/room/index')

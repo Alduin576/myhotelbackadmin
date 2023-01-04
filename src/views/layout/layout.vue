@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <header class="header headerTitle">
-      <div class="title" >酒店后台管理系统</div>
+      <div class="title">酒店后台管理系统</div>
       <!-- 用户登录和注销 -->
       <div class="user">
         <span>超级管理员</span> |
@@ -21,10 +21,16 @@
           <i class="el-icon-menu"></i>
           <span slot="title">数据中心</span>
         </el-menu-item>
-        <el-menu-item index="room">
-          <i class="el-icon-menu"></i>
-          <span slot="title">房间管理</span>
-        </el-menu-item>
+        <!-- 此时index=room无效 -->
+        <el-submenu index="room">
+          <template slot="title">
+            <i class="el-icon-menu"></i>
+            <span>房间管理</span>
+          </template>
+          <el-menu-item index="room_total">房间总览</el-menu-item>
+          <el-menu-item index="room_add">房间新增</el-menu-item>
+          <el-menu-item index="room_update">房间修改</el-menu-item>
+        </el-submenu>
         <el-menu-item index="user">
           <i class="el-icon-menu"></i>
           <span slot="title">用户管理</span>
@@ -50,7 +56,7 @@
 export default {
   data() {
     return {
-        activeMenu: 'home',
+      activeMenu: "home",
     };
   },
   mounted() {},
@@ -58,6 +64,7 @@ export default {
 
   methods: {
     handleSelect(key, keyPath) {
+      console.log(key);
       this.push(key);
     },
     push(path) {
@@ -86,5 +93,8 @@ export default {
 }
 .mainbody .content {
   padding: 1rem 1rem;
+}
+.layout .mainbody .slidebar{
+  padding: 0.5rem;
 }
 </style>
