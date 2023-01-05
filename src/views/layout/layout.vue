@@ -27,9 +27,9 @@
             <i class="el-icon-menu"></i>
             <span>房间管理</span>
           </template>
-          <el-menu-item index="room_total">房间总览</el-menu-item>
-          <el-menu-item index="room_add">房间新增</el-menu-item>
-          <el-menu-item index="room_update">房间修改</el-menu-item>
+          <el-menu-item index="roomTotal">房间总览</el-menu-item>
+          <el-menu-item index="roomAdd">房间新增</el-menu-item>
+          <el-menu-item index="roomUpdate">房间修改</el-menu-item>
         </el-submenu>
         <el-menu-item index="user">
           <i class="el-icon-menu"></i>

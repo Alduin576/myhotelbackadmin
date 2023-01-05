@@ -6,7 +6,8 @@
 // flag: 是否搜索当前路径的子目录  如果为false，在当前路径下的子目录不会进行搜索。
 // regExp: 要匹配的文件  使用正则表达式来匹配。
 
-const files = require.context('./module', false, /\.js$/) //
+const files = require.context('./module', false, /\.js$/) // files就是一个context
+
 
 var pages = {}
 files.keys().forEach(key => {

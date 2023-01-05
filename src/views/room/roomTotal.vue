@@ -8,7 +8,7 @@
           <!-- 列表形式的全部房间 -->
           <!-- <roomAll v-for="item in allRooms" :rooms="item" :key="item.roomId" /> -->
           <!-- 表格形式的全部房间 -->
-          
+          <roomAll/>
         </div>
       </el-tab-pane>
 

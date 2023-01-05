@@ -1,10 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+// import generalList from './module'
+const files = require.context('./module', false, /\.js$/)
+var pages = []
+files.keys().forEach(key => {
+  pages = pages.concat(files(key).default)//Array concat可以将新内容添加到数组中，返回新增加的数组
+})
 
 Vue.use(VueRouter)
 
 const Layout = () => import('@/views/layout/layout')
+
 
 
 const routes = [
@@ -21,32 +28,7 @@ const routes = [
     path: '/',
     component: Layout,
     redirect: '/home',
-    children: [
-      {
-        path: '/home',
-        name: 'home',
-        component: () => import('@/views/home/home'),
-      },
-      {
-        path: '/room_total',
-        name: 'room',
-        alias: 'roomManagement',
-        component: () => import('@/views/room/index')
-      },
-      {
-        path: '/user',
-        name: 'user',
-        component: () => import('@/views/user/index')
-      },
-      {
-        path: '/config',
-        component: () => import('@/views/config/index'),
-      },
-      {
-        path: '/setting',
-        component: () => import('@/views/setting/index'),
-      }
-    ]
+    children: pages,
   },
 ]
 
