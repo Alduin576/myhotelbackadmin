@@ -29,6 +29,7 @@ export const get = (url, params, headers) => {
     })
 }
 
+// 封装自定义的请求
 export const myget = (type, url) => {
     return new Promise((resolve, reject) => {
         axios({
